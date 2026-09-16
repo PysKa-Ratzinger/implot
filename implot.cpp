@@ -3984,6 +3984,7 @@ bool DragPoint(int n_id, double* x, double* y, const ImVec4& col, float radius, 
 
     ImGui::KeepAliveID(id);
     if (input) {
+        rect.ClipWithFull(GImPlot->CurrentPlot->PlotRect);
         bool clicked = ImGui::ButtonBehavior(rect,id,&hovered,&held);
         if (out_clicked) *out_clicked = clicked;
         if (out_hovered) *out_hovered = hovered;
@@ -4033,6 +4034,7 @@ bool DragLineX(int n_id, double* value, const ImVec4& col, float thickness, ImPl
 
     ImGui::KeepAliveID(id);
     if (input) {
+        rect.ClipWithFull(GImPlot->CurrentPlot->PlotRect);
         bool clicked = ImGui::ButtonBehavior(rect,id,&hovered,&held);
         if (out_clicked) *out_clicked = clicked;
         if (out_hovered) *out_hovered = hovered;
@@ -4089,6 +4091,7 @@ bool DragLineY(int n_id, double* value, const ImVec4& col, float thickness, ImPl
 
     ImGui::KeepAliveID(id);
     if (input) {
+        rect.ClipWithFull(GImPlot->CurrentPlot->PlotRect);
         bool clicked = ImGui::ButtonBehavior(rect,id,&hovered,&held);
         if (out_clicked) *out_clicked = clicked;
         if (out_hovered) *out_hovered = hovered;
